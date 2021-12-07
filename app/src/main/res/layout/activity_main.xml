@@ -33,14 +33,14 @@
 
     <Button
         android:id="@+id/buttonChampionship"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="139dp"
+        android:layout_height="99dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#9C000000"
         android:drawableTop="@drawable/championshipimg"
-        android:text="@string/championship"
         android:onClick="changeToChampionship"
+        android:text="@string/championship"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonShare"
         app:layout_constraintStart_toStartOf="parent" />

@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/activity_championship.xml" value="0.20416666666666666" />
-        <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/activity_share_app.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/championship.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/championshipLayout.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/FormulaOne/app/src/main/res/layout/championshiplayout.xml" value="0.21" />
       </map>
     </option>
   </component>
