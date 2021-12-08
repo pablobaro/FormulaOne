@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/profileImage"
+            android:id="@+id/profileImageFav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/driverListName"
+            android:id="@+id/driverFavName"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -43,7 +43,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/driverListNationality"
+            android:id="@+id/driverFavNationality"
             android:layout_width="184dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -52,7 +52,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/permanentNumberList"
+            android:id="@+id/permanentNumberFav"
             android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:text="Permanent Number" />

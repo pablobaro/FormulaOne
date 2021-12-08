@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FormulaOne">
         <activity
+            android:name=".driverComplete"
+            android:exported="false" />
+        <activity
             android:name=".DriversTabbed"
             android:exported="false"
             android:label="@string/title_activity_drivers_tabbed"

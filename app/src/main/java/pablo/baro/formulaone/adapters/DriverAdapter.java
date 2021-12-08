@@ -1,11 +1,15 @@
 package pablo.baro.formulaone.adapters;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pablo.baro.formulaone.R;
+import pablo.baro.formulaone.controllers.DriverViewModel;
+import pablo.baro.formulaone.driverComplete;
 import pablo.baro.formulaone.model.ChampionshipModel;
 import pablo.baro.formulaone.model.DriversModel;
 
@@ -30,16 +36,17 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverView
     @Override
     public DriverAdapter.DriverViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v  = LayoutInflater.from(contexto).inflate(R.layout.driverslayout, parent, false);
+
         return new DriverAdapter.DriverViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull DriverViewHolder holder, int position) {
         DriversModel currentItem = drivers.get(position);
-            /*holder.mView.setOnClickListener(new View.OnClickListener() {
+            holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (mTwoPane) {
+                    /*if (mTwoPane) {
                         int selectedMail = holder.getAdapterPosition();
 
                         MailDetailFragment fragment = MailDetailFragment.newInstance(selectedMail);
@@ -48,16 +55,15 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverView
                                 .addToBackStack(null)
                                 .commit();
                         Log.d(TAG, mails.get(selectedMail).getSubject());
-                    } else {
+                    } else {*/
                         Context context = v.getContext();
                         Intent intent = new Intent(context,
-                                MailDetailActivity.class);
-                        intent.putExtra(Mail.MAIL_ID_KEY,
-                                holder.getAdapterPosition());
+                                driverComplete.class);
+                        intent.putExtra(DriversModel.DRIVER_KEY, holder.getAdapterPosition());
                         context.startActivity(intent);
-                    }
+                    //}
                 }
-            });*/
+            });
         String nName= currentItem.getName() + " " + currentItem.getSurname();
         holder.name.setText(nName);
         holder.nationality.setText(currentItem.getNationality());

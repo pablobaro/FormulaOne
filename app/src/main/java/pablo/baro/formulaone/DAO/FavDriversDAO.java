@@ -20,6 +20,9 @@ public interface FavDriversDAO {
     @Delete
     void deleteWord(DriversModel model);
 
-    @Query("SELECT * from word_table ORDER BY word ASC")
-    LiveData<List<DriversModel>> getAllWords();
+    @Query("SELECT * from driver_table")
+    LiveData<List<DriversModel>> getAllDrivers();
+
+    @Query("SELECT * from driver_table LIMIT 1")
+    DriversModel[] getAnyWord();
 }

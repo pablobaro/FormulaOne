@@ -12,13 +12,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
+import pablo.baro.formulaone.adapters.DriverAdapter;
+import pablo.baro.formulaone.controllers.DriverViewModel;
 import pablo.baro.formulaone.ui.main.SectionsPagerAdapter;
 import pablo.baro.formulaone.databinding.ActivityDriversTabbedBinding;
 
 public class DriversTabbed extends AppCompatActivity {
 
     private ActivityDriversTabbedBinding binding;
+    DriverViewModel dvm;
+    Button starButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
