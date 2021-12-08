@@ -20,4 +20,14 @@
     <string name="shareText">Scan this QR code or click "Share the App via" to instantly link to the app store and encourage your friends to download my awesome app! This feature is incredibly helpful for F1 Fans.</string>
     <string name="shareAppVia">Share the App via...</string>
     <string name="qrcode">qrCode</string>
+    <string name="driver_team">Driver Team</string>
+    <string name="driver_points">Driver Points</string>
+    <string name="driver_name">Driver Name</string>
+    <string name="pos">Pos</string>
+    <string name="ChooserTitle">Choose where to Share</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_drivers_tabbed">DriversTabbed</string>
+    <string name="tab_text_1">Drivers</string>
+    <string name="tab_text_2">Favourites</string>
 </resources>

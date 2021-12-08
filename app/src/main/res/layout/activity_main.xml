@@ -24,6 +24,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/designedBy"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +56,7 @@
         android:drawableTop="@drawable/driversimg"
         android:text="@string/drivers"
         android:textSize="12sp"
+        android:onClick="changeToDrivers"
         app:layout_constraintBottom_toTopOf="@+id/buttonVideos"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -81,6 +83,7 @@
         android:drawableTop="@drawable/videosimg"
         android:text="@string/videos"
         android:textSize="12sp"
+        android:onClick="changeToVideos"
         app:layout_constraintBottom_toBottomOf="@+id/buttonShare"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -92,6 +95,7 @@
         android:backgroundTint="#9C000000"
         android:drawableTop="@drawable/scheduleimg"
         android:text="@string/schedule"
+        android:onClick="changeToSchedule"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"

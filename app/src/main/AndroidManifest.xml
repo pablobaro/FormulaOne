@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pablo.baro.formulaone">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FormulaOne">
+        <activity
+            android:name=".DriversTabbed"
+            android:exported="false"
+            android:label="@string/title_activity_drivers_tabbed"
+            android:theme="@style/Theme.FormulaOne.NoActionBar" />
+        <activity
+            android:name=".Videos"
+            android:exported="false"
+            android:usesCleartextTraffic="true" />
+        <activity
+            android:name=".Schedule"
+            android:exported="false" />
+        <activity
+            android:name=".Drivers"
+            android:exported="false" />
         <activity
             android:name=".Championship"
             android:exported="false" />
@@ -26,5 +43,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
 </manifest>

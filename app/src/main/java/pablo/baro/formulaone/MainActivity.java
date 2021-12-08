@@ -23,4 +23,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ShareAPP.class);
         startActivity(intent);
     }
+
+    public void changeToDrivers(View view) {
+        Intent intent = new Intent(this, DriversTabbed.class);
+        startActivity(intent);
+    }
+
+    public void changeToSchedule(View view){
+        Intent intent = new Intent(this, Schedule.class);
+        startActivity(intent);
+    }
+
+    public void changeToVideos(View view){
+        Intent intent = new Intent(this, Videos.class);
+        startActivity(intent);
+    }
 }
