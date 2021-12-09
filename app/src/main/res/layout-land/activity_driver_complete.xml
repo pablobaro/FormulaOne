@@ -9,19 +9,18 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
-        android:onClick="favs"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:onClick="favs"
         android:text="Add to Favs"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/completeImage"
+        app:layout_constraintStart_toStartOf="@+id/completeImage"
+        app:layout_constraintTop_toBottomOf="@+id/completeImage" />
 
     <ImageView
         android:id="@+id/completeImage"
-        android:layout_width="237dp"
-        android:layout_height="233dp"
+        android:layout_width="177dp"
+        android:layout_height="148dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,55 +28,59 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favouriteDriversComplete"
-        android:layout_width="410dp"
-        android:layout_height="246dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_width="245dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/completeImage"
+        app:layout_constraintTop_toBottomOf="@+id/completeImage"
         tools:listitem="@layout/favouritedriver_layout" />
 
     <TextView
         android:id="@+id/favouriteList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="12dp"
         android:text="My Favourites!"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/favouriteDriversComplete"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/completeImage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/nameDriverComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/completeImage" />
+        app:layout_constraintTop_toTopOf="@+id/completeImage" />
 
     <TextView
         android:id="@+id/nationalityDriverComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/numberDriverComplete"
         app:layout_constraintTop_toBottomOf="@+id/nameDriverComplete" />
 
     <TextView
         android:id="@+id/numberDriverComplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintEnd_toStartOf="@+id/completeImage"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/nameDriverComplete"
         app:layout_constraintTop_toTopOf="@+id/nameDriverComplete" />
 
