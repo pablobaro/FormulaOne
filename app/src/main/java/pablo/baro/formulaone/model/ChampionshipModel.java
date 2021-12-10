@@ -1,6 +1,6 @@
 package pablo.baro.formulaone.model;
 
-public class ChampionshipModel {
+public class ChampionshipModel implements Comparable<ChampionshipModel>{
     String name;
     String surname;
     double points;
@@ -53,5 +53,12 @@ public class ChampionshipModel {
 
     public void setConstructorName(String constructorName) {
         this.constructorName = constructorName;
+    }
+
+    @Override
+    public int compareTo(ChampionshipModel o) {
+        int position = ((ChampionshipModel) o).getPosition();
+
+        return this.position - position;
     }
 }

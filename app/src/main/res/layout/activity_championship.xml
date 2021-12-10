@@ -55,7 +55,7 @@
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="21"
+        android:max="22"
         android:progress="0" />
 
 </LinearLayout>

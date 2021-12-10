@@ -24,7 +24,7 @@ import pablo.baro.formulaone.databinding.ActivityMainBinding;
 import pablo.baro.formulaone.model.ChampionshipModel;
 
 public class Championship extends AppCompatActivity {
-    ArrayList<ChampionshipModel> drivers;
+    private final ArrayList<ChampionshipModel> drivers = new ArrayList<>();
     ChampionshipViewModel viewModel;
     private RecyclerView recyclerView;
     private ChampionshipAdapter adapter;
@@ -40,7 +40,7 @@ public class Championship extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        drivers = new ArrayList<>();
+        //drivers = new ArrayList<>();
 
         requestQueue = Volley.newRequestQueue(this);
 
@@ -76,12 +76,12 @@ public class Championship extends AppCompatActivity {
             @Override
             public void onChanged(List<ChampionshipModel> driverClasses) {
                 if (driverClasses != null) {
+                    ArrayList<ChampionshipModel> addDrivers = new ArrayList<>();
                     for (int i = 0; i < driverClasses.size(); i++) {
                         ChampionshipModel driver = new ChampionshipModel(driverClasses.get(i).getPosition(),driverClasses.get(i).getName(), driverClasses.get(i).getSurname(), driverClasses.get(i).getPoints(), driverClasses.get(i).getConstructorName());
-                        drivers.add(driver);
+                        addDrivers.add(driver);
                     }
-                    adapter.clearData();
-                    adapter.loadData(drivers);
+                    adapter.loadData(addDrivers);
                 }
             }
         });

@@ -2,32 +2,34 @@
     <string name="app_name">FormulaOne</string>
     <string name="designedBy">Designed by Pablo Baro Parra</string>
     <string name="championship">Championship</string>
-    <string name="formula1logo">Formula1Logo</string>
+    <string name="formula1logo" translatable="false">Formula1Logo</string>
     <string name="drivers">Drivers</string>
     <string name="videos">Videos</string>
     <string name="share">Share</string>
     <string name="schedule">Schedule</string>
     <string name="title_activity_share_app">ShareApp</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
 
     <string name="shareText">Scan this QR code or click "Share the App via" to instantly link to the app store and encourage your friends to download my awesome app! This feature is incredibly helpful for F1 Fans.</string>
     <string name="shareAppVia">Share the App via...</string>
-    <string name="qrcode">qrCode</string>
+    <string name="qrcode" translatable="false">qrCode</string>
     <string name="driver_team">Driver Team</string>
     <string name="driver_points">Driver Points</string>
     <string name="driver_name">Driver Name</string>
-    <string name="pos">Pos</string>
+    <string name="pos" translatable="false">Pos</string>
     <string name="ChooserTitle">Choose where to Share</string>
+    <string name="myFavouriteList">My Favourites!</string>
+    <string name="addtoFavsButton">Add to Favourite</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_drivers_tabbed">DriversTabbed</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_drivers_tabbed" translatable="false">DriversTabbed</string>
     <string name="tab_text_1">Drivers</string>
     <string name="tab_text_2">Favourites</string>
 </resources>

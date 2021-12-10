@@ -1,26 +1,25 @@
 package pablo.baro.formulaone.adapters;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import pablo.baro.formulaone.DriversTabbed;
+import pablo.baro.formulaone.Fragments.DriverDetailFragment;
 import pablo.baro.formulaone.R;
-import pablo.baro.formulaone.controllers.DriverViewModel;
 import pablo.baro.formulaone.driverComplete;
-import pablo.baro.formulaone.model.ChampionshipModel;
+import androidx.fragment.app.FragmentActivity;
 import pablo.baro.formulaone.model.DriversModel;
 
 public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverViewHolder> {
@@ -46,22 +45,22 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverView
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /*if (mTwoPane) {
-                        int selectedMail = holder.getAdapterPosition();
+                    if (DriversTabbed.getTwoPane()) {
+                       int selectedDriver = holder.getAdapterPosition();
 
-                        MailDetailFragment fragment = MailDetailFragment.newInstance(selectedMail);
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.mail_detail_container, fragment)
+                        DriverDetailFragment fragment = DriverDetailFragment.newInstance(selectedDriver);
+                        DriversTabbed.getFragmet().beginTransaction()
+                                .replace(R.id.driver_add_to_favs_layout, fragment)
                                 .addToBackStack(null)
                                 .commit();
-                        Log.d(TAG, mails.get(selectedMail).getSubject());
-                    } else {*/
+                        Log.d("Hol", drivers.get(selectedDriver).getName());
+                    } else {
                         Context context = v.getContext();
                         Intent intent = new Intent(context,
                                 driverComplete.class);
                         intent.putExtra(DriversModel.DRIVER_KEY, holder.getAdapterPosition());
                         context.startActivity(intent);
-                    //}
+                    }
                 }
             });
         String nName= currentItem.getName() + " " + currentItem.getSurname();

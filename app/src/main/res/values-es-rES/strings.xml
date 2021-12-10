@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FormulaOne</string>
+    <string name="designedBy" translatable="false">Diseñado por Pablo Baro Parra</string>
+    <string name="championship">Campeonato</string>
+    <string name="drivers">Pilotos</string>
+    <string name="videos">Videos</string>
+    <string name="share">Compartir</string>
+    <string name="schedule">Calendario</string>
+    <string name="title_activity_share_app">Compartir APP</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="shareText" translatable="false">Escanea este código QR o pinche en Compartir la App para enviar el link de la aplicación y anima a tus amigos a descargar la app! Esta característica es muy útil para Fans de la F1.</string>
+    <string name="shareAppVia">Compartir App vía...</string>
+    <string name="driver_team">Piloto Equ</string>
+    <string name="driver_points">Puntos Piloto</string>
+    <string name="driver_name">Nombre Piloto</string>
+    <string name="ChooserTitle">Elige donde compartir</string>
+    <string name="myFavouriteList">Mis favoritos!</string>
+    <string name="addtoFavsButton">Añadir a Favoritos</string>
+    <string name="tab_text_1">Pilotos</string>
+    <string name="tab_text_2">Favoritos</string>
+</resources>

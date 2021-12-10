@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".driverComplete">
+    tools:context=".Fragments.DriverDetailFragment">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonFavsFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -15,68 +15,71 @@
         android:text="@string/addtoFavsButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favouriteDriversFragment"
+        app:layout_constraintVertical_bias="0.065" />
 
     <ImageView
-        android:id="@+id/completeImage"
+        android:id="@+id/completeImageFragment"
         android:layout_width="237dp"
         android:layout_height="233dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.712"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/maxverstappen" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favouriteDriversFragment"
-        android:layout_width="410dp"
-        android:layout_height="246dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:layout_width="380dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favouriteList2"
         tools:listitem="@layout/favouritedriver_layout" />
 
     <TextView
-        android:id="@+id/favouriteList"
+        android:id="@+id/favouriteList2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="20dp"
         android:text="@string/myFavouriteList"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/favouriteDriversFragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/completeImageFragment" />
 
     <TextView
-        android:id="@+id/nameDriverComplete"
+        android:id="@+id/nameDriverFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/completeImage"
+        app:layout_constraintEnd_toStartOf="@+id/completeImageFragment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nationalityDriverComplete"
+        android:id="@+id/nationalityDriverFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/completeImage"
+        app:layout_constraintEnd_toStartOf="@+id/completeImageFragment"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberDriverComplete" />
+        app:layout_constraintTop_toBottomOf="@+id/nameDriverFragment" />
 
     <TextView
-        android:id="@+id/numberDriverComplete"
+        android:id="@+id/numberDriverFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/completeImage"
+        app:layout_constraintEnd_toStartOf="@+id/completeImageFragment"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameDriverComplete" />
-
+        app:layout_constraintTop_toBottomOf="@+id/nationalityDriverFragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

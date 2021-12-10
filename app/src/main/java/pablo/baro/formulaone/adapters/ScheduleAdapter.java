@@ -14,6 +14,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 import pablo.baro.formulaone.R;
+import pablo.baro.formulaone.Schedule;
 import pablo.baro.formulaone.model.ScheduleModel;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>{
@@ -46,6 +47,14 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         holder.raceName.setText(raceName);
         holder.date.setText(date);
         holder.information.setText(information);
+    }
+
+    public void loadData(ArrayList<ScheduleModel> nSchedule){
+        if (this.schedule!=null){
+            schedule.clear();
+            schedule=nSchedule;
+            notifyDataSetChanged();
+        }
     }
 
     @Override

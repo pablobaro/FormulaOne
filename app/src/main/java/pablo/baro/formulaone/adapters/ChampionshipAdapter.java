@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import pablo.baro.formulaone.R;
 import pablo.baro.formulaone.model.ChampionshipModel;
@@ -46,14 +48,9 @@ public class ChampionshipAdapter extends RecyclerView.Adapter<ChampionshipAdapte
 
     public void loadData(ArrayList<ChampionshipModel> nDrivers){
         if(drivers!=null){
+            drivers.clear();
             this.drivers = nDrivers;
             notifyDataSetChanged();
-        }
-    }
-
-    public void clearData(){
-        if (drivers!=null){
-            this.drivers.clear();
         }
     }
 

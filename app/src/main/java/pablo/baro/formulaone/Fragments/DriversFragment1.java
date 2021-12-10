@@ -3,6 +3,7 @@ package pablo.baro.formulaone.Fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,12 +21,13 @@ import pablo.baro.formulaone.adapters.DriverAdapter;
 import pablo.baro.formulaone.model.DriversModel;
 
 public class DriversFragment1 extends Fragment {
-
+    FragmentManager fm;
     public DriversFragment1() {
-        // Required empty public constructor
+
     }
     RecyclerView recyclerView;
     List<DriversModel> drivers;
+    private boolean mTwoPane = false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_drivers1, container, false);

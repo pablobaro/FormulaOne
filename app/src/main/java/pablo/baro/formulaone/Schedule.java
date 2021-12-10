@@ -34,6 +34,9 @@ public class Schedule extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         schedule = new ArrayList<>();
+
+        adapter = new ScheduleAdapter(Schedule.this, schedule);
+        recyclerView.setAdapter(adapter);
         parseJSON();
     }
 
@@ -42,13 +45,13 @@ public class Schedule extends AppCompatActivity {
         viewModel.getSchedule().observe(this, new Observer<List<ScheduleModel>>() {
             @Override
             public void onChanged(List<ScheduleModel> driverClasses) {
+                ArrayList<ScheduleModel> addSchedules = new ArrayList<>();
                 if (driverClasses != null) {
                     for (int i = 0; i < driverClasses.size(); i++) {
                         ScheduleModel scheduleModel = new ScheduleModel(driverClasses.get(i).getSeason(), driverClasses.get(i).getRound(), driverClasses.get(i).getRaceName(), driverClasses.get(i).getDate(), driverClasses.get(i).getInformation());
-                        schedule.add(scheduleModel);
+                        addSchedules.add(scheduleModel);
                     }
-                    adapter = new ScheduleAdapter(Schedule.this, schedule);
-                    recyclerView.setAdapter(adapter);
+                    adapter.loadData(addSchedules);
                 }
             }
         });

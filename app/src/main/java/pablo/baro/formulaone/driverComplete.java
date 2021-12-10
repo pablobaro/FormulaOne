@@ -16,7 +16,6 @@ import java.util.List;
 
 import pablo.baro.formulaone.adapters.FavouriteAdapter;
 import pablo.baro.formulaone.controllers.DriverViewModel;
-import pablo.baro.formulaone.model.DriverRoomDatabase;
 import pablo.baro.formulaone.model.DriversModel;
 
 public class driverComplete extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class driverComplete extends AppCompatActivity {
         }
 
         FavouriteAdapter adapter = new FavouriteAdapter(getApplicationContext(), drivers);
-        RecyclerView rv = findViewById(R.id.favouriteDriversComplete);
+        RecyclerView rv = findViewById(R.id.favouriteDriversFragment);
         rv.setAdapter(adapter);
         rv.setLayoutManager(new LinearLayoutManager(this));
 
