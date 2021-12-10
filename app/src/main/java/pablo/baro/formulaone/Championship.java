@@ -46,6 +46,10 @@ public class Championship extends AppCompatActivity {
 
         SeekBar roundBar = findViewById(R.id.seekBar);
 
+        adapter = new ChampionshipAdapter(Championship.this, drivers);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
         roundBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -76,8 +80,8 @@ public class Championship extends AppCompatActivity {
                         ChampionshipModel driver = new ChampionshipModel(driverClasses.get(i).getPosition(),driverClasses.get(i).getName(), driverClasses.get(i).getSurname(), driverClasses.get(i).getPoints(), driverClasses.get(i).getConstructorName());
                         drivers.add(driver);
                     }
-                    adapter = new ChampionshipAdapter(Championship.this, drivers);
-                    recyclerView.setAdapter(adapter);
+                    adapter.clearData();
+                    adapter.loadData(drivers);
                 }
             }
         });

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import pablo.baro.formulaone.R;
 import pablo.baro.formulaone.model.ChampionshipModel;
+import pablo.baro.formulaone.model.DriversModel;
 
 public class ChampionshipAdapter extends RecyclerView.Adapter<ChampionshipAdapter.DriverViewHolder> {
     private Context contexto;
@@ -41,6 +42,19 @@ public class ChampionshipAdapter extends RecyclerView.Adapter<ChampionshipAdapte
         holder.points.setText(String.valueOf(point));
         holder.constructor.setText(constructor);
         holder.drivePosition.setText(String.valueOf(actualPosition));
+    }
+
+    public void loadData(ArrayList<ChampionshipModel> nDrivers){
+        if(drivers!=null){
+            this.drivers = nDrivers;
+            notifyDataSetChanged();
+        }
+    }
+
+    public void clearData(){
+        if (drivers!=null){
+            this.drivers.clear();
+        }
     }
 
     @Override
