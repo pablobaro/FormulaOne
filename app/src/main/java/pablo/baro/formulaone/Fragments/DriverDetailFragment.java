@@ -22,7 +22,6 @@ import java.util.List;
 import pablo.baro.formulaone.R;
 import pablo.baro.formulaone.adapters.FavouriteAdapter;
 import pablo.baro.formulaone.controllers.DriverViewModel;
-import pablo.baro.formulaone.driverComplete;
 import pablo.baro.formulaone.model.DriversModel;
 
 public class DriverDetailFragment extends Fragment implements View.OnClickListener {
@@ -77,7 +76,7 @@ public class DriverDetailFragment extends Fragment implements View.OnClickListen
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mDriverViewModel = new DriverViewModel(this.getActivity().getApplication());
-        mDriverViewModel.getAllWords().observe(getViewLifecycleOwner(), new Observer<List<DriversModel>>() {
+        mDriverViewModel.getAllDrivers().observe(getViewLifecycleOwner(), new Observer<List<DriversModel>>() {
             @Override
             public void onChanged(List<DriversModel> driversModels) {
                 adapter.setDrivers(driversModels);
@@ -97,7 +96,7 @@ public class DriverDetailFragment extends Fragment implements View.OnClickListen
                 Toast.makeText(getContext(), "Deleting " +
                         myWord.getName(), Toast.LENGTH_LONG).show();
 
-                mDriverViewModel.deleteWord(myWord);
+                mDriverViewModel.deleteDriver(myWord);
             }
         });
 

@@ -1,12 +1,16 @@
 package pablo.baro.formulaone.Fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,32 +20,60 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import pablo.baro.formulaone.DriversTabbed;
 import pablo.baro.formulaone.R;
 import pablo.baro.formulaone.adapters.DriverAdapter;
+import pablo.baro.formulaone.driverComplete;
 import pablo.baro.formulaone.model.DriversModel;
 
 public class DriversFragment1 extends Fragment {
     FragmentManager fm;
+
+    OnFragmentInteractionListener mInterfaz;
+
     public DriversFragment1() {
 
     }
     RecyclerView recyclerView;
     List<DriversModel> drivers;
     private boolean mTwoPane = false;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_drivers1, container, false);
-        drivers = new ArrayList();
+        drivers = new ArrayList<>();
         recyclerView = vista.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         drivers = getAllDrivers();
 
         DriverAdapter adapter = new DriverAdapter(getContext(), drivers);
+
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new DriverAdapter.ClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                if (DriversTabbed.getTwoPane()) {
+                    int selectedDriver = position;
+
+                    DriverDetailFragment fragment = DriverDetailFragment.newInstance(selectedDriver);
+                    DriversTabbed.getSupportFragment().beginTransaction()
+                            .replace(R.id.driver_add_to_favs_layout, fragment)
+                            .addToBackStack(null)
+                            .commit();
+                    Log.d("Piloto Actual: ", drivers.get(selectedDriver).getName());
+                } else {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, driverComplete.class);
+                    intent.putExtra(DriversModel.DRIVER_KEY, position);
+                    context.startActivity(intent);
+                }
+            }
+        });
         return vista;
     }
 
-    private List<DriversModel> getAllDrivers(){
+    public List<DriversModel> getAllDrivers(){
         return new ArrayList<DriversModel>(){{
             add(new DriversModel(1,"Max", "Verstappen", "Dutch", "33", R.drawable.maxverstappen));
             add(new DriversModel(2,"Sergio", "Pérez", "Mexican", "11", R.drawable.sergioperez));
@@ -65,4 +97,18 @@ public class DriversFragment1 extends Fragment {
             add(new DriversModel(20,"Nikita", "Mazepin", "Russian", "9", R.drawable.mazepin));
         }};
     }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof OnFragmentInteractionListener) {
+            mInterfaz= (OnFragmentInteractionListener) context;
+        }
+    }
+
+    public interface OnFragmentInteractionListener{
+        DriversModel getDriver(String name);
+    }
+
+
 }

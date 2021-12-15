@@ -20,4 +20,5 @@
     <string name="addtoFavsButton">Añadir a Favoritos</string>
     <string name="tab_text_1">Pilotos</string>
     <string name="tab_text_2">Favoritos</string>
+    <string name="round">Ronda </string>
 </resources>

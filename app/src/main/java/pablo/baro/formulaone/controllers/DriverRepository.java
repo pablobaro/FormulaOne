@@ -29,7 +29,7 @@ public class DriverRepository {
         new insertAsyncTask(dao).execute(driver);
     }
 
-    public void deleteWord(DriversModel driver) {
+    public void deleteDriver(DriversModel driver) {
         new deleteWordAsyncTask(dao).execute(driver);
     }
 

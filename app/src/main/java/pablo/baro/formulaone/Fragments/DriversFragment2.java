@@ -18,7 +18,6 @@ import java.util.List;
 import pablo.baro.formulaone.R;
 import pablo.baro.formulaone.adapters.FavouriteAdapter;
 import pablo.baro.formulaone.controllers.DriverViewModel;
-import pablo.baro.formulaone.driverComplete;
 import pablo.baro.formulaone.model.DriversModel;
 
 public class DriversFragment2 extends Fragment {
@@ -33,7 +32,7 @@ public class DriversFragment2 extends Fragment {
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         mDriverViewModel = new DriverViewModel(getActivity().getApplication());
-        mDriverViewModel.getAllWords().observe(getActivity(), new Observer<List<DriversModel>>() {
+        mDriverViewModel.getAllDrivers().observe(getActivity(), new Observer<List<DriversModel>>() {
             @Override
             public void onChanged(List<DriversModel> driversModels) {
                 adapter.setDrivers(driversModels);
@@ -53,7 +52,7 @@ public class DriversFragment2 extends Fragment {
                 Toast.makeText(getContext(), "Deleting " +
                         myWord.getName(), Toast.LENGTH_LONG).show();
 
-                mDriverViewModel.deleteWord(myWord);
+                mDriverViewModel.deleteDriver(myWord);
             }
         });
 

@@ -20,7 +20,7 @@ public class DriverViewModel extends AndroidViewModel {
         mAllDrivers = repository.getAllDrivers();
     }
 
-    public LiveData<List<DriversModel>> getAllWords() {
+    public LiveData<List<DriversModel>> getAllDrivers() {
         return mAllDrivers;
     }
 
@@ -28,7 +28,7 @@ public class DriverViewModel extends AndroidViewModel {
         repository.insert(driver);
     }
 
-    public void deleteWord(DriversModel driver) {
-        repository.deleteWord(driver);
+    public void deleteDriver(DriversModel driver) {
+        repository.deleteDriver(driver);
     }
 }

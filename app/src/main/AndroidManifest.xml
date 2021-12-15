@@ -19,6 +19,7 @@
         <activity
             android:name=".DriversTabbed"
             android:exported="false"
+            android:parentActivityName=".MainActivity"
             android:label="@string/title_activity_drivers_tabbed"
             android:theme="@style/Theme.FormulaOne.NoActionBar" />
         <activity

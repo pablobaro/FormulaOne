@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Application;
 import android.os.Bundle;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
@@ -50,11 +51,13 @@ public class Championship extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        TextView roundText = findViewById(R.id.roundChampionshipSlider);
+
         roundBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 String nRound=String.valueOf(progress);
-
+                roundText.setText(getString(R.string.round)+ ": " + String.valueOf(progress));
                 parseJSON(nRound);
             }
 

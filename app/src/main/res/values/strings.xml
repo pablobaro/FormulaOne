@@ -27,9 +27,10 @@
     <string name="ChooserTitle">Choose where to Share</string>
     <string name="myFavouriteList">My Favourites!</string>
     <string name="addtoFavsButton">Add to Favourite</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="title_activity_drivers_tabbed" translatable="false">DriversTabbed</string>
     <string name="tab_text_1">Drivers</string>
     <string name="tab_text_2">Favourites</string>
+    <string name="round">Round </string>
 </resources>

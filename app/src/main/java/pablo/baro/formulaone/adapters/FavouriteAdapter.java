@@ -1,6 +1,8 @@
 package pablo.baro.formulaone.adapters;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,6 +71,20 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.Favo
             nationality = (TextView) itemView.findViewById(R.id.driverFavNationality);
             number = (TextView) itemView.findViewById(R.id.permanentNumberFav);
             img = (ImageView) itemView.findViewById(R.id.profileImageFav);
+
+            int nightModeFlags = itemView.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+            switch(nightModeFlags){
+                case Configuration.UI_MODE_NIGHT_YES:
+                    ((TextView) itemView.findViewById(R.id.driverFavName)).setTextColor(Color.WHITE);
+                    ((TextView) itemView.findViewById(R.id.driverFavNationality)).setTextColor(Color.WHITE);
+                    ((TextView) itemView.findViewById(R.id.permanentNumberFav)).setTextColor(Color.WHITE);
+                    break;
+                case Configuration.COLOR_MODE_HDR_NO:
+                    ((TextView) itemView.findViewById(R.id.driverFavName)).setTextColor(Color.BLACK);
+                    ((TextView) itemView.findViewById(R.id.driverFavNationality)).setTextColor(Color.BLACK);
+                    ((TextView) itemView.findViewById(R.id.permanentNumberFav)).setTextColor(Color.BLACK);
+                    break;
+            }
         }
     }
 }

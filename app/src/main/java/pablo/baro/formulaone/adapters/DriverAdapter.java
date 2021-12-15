@@ -2,6 +2,8 @@ package pablo.baro.formulaone.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,7 @@ import pablo.baro.formulaone.model.DriversModel;
 public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverViewHolder> {
     private Context contexto;
     private List<DriversModel> drivers;
+    private static DriverAdapter.ClickListener clickListener;
 
     public DriverAdapter(Context contexto, List<DriversModel> drivers){
         this.contexto = contexto;
@@ -42,27 +45,7 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverView
     @Override
     public void onBindViewHolder(@NonNull DriverViewHolder holder, int position) {
         DriversModel currentItem = drivers.get(position);
-            holder.mView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (DriversTabbed.getTwoPane()) {
-                       int selectedDriver = holder.getAdapterPosition();
 
-                        DriverDetailFragment fragment = DriverDetailFragment.newInstance(selectedDriver);
-                        DriversTabbed.getFragmet().beginTransaction()
-                                .replace(R.id.driver_add_to_favs_layout, fragment)
-                                .addToBackStack(null)
-                                .commit();
-                        Log.d("Hol", drivers.get(selectedDriver).getName());
-                    } else {
-                        Context context = v.getContext();
-                        Intent intent = new Intent(context,
-                                driverComplete.class);
-                        intent.putExtra(DriversModel.DRIVER_KEY, holder.getAdapterPosition());
-                        context.startActivity(intent);
-                    }
-                }
-            });
         String nName= currentItem.getName() + " " + currentItem.getSurname();
         holder.name.setText(nName);
         holder.nationality.setText(currentItem.getNationality());
@@ -70,12 +53,20 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverView
         holder.number.setText(currentItem.getNumber());
     }
 
+    public void setOnItemClickListener(DriverAdapter.ClickListener clickListener){
+        DriverAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener{
+        void onItemClick(View v, int position);
+    }
+
     @Override
     public int getItemCount() {
         return drivers.size();
     }
 
-    public class DriverViewHolder extends RecyclerView.ViewHolder{
+    public class DriverViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         View mView;
         TextView name;
         TextView nationality;
@@ -90,6 +81,12 @@ public class DriverAdapter extends RecyclerView.Adapter<DriverAdapter.DriverView
             nationality = (TextView) view.findViewById(R.id.driverListNationality);
             number = (TextView) view.findViewById(R.id.permanentNumberList);
             img = (ImageView) view.findViewById(R.id.profileImage);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            clickListener.onItemClick(v, getAdapterPosition());
         }
     }
 }

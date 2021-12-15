@@ -43,7 +43,7 @@ public class driverComplete extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
 
         mDriverViewModel = new DriverViewModel(this.getApplication());
-        mDriverViewModel.getAllWords().observe(this, new Observer<List<DriversModel>>() {
+        mDriverViewModel.getAllDrivers().observe(this, new Observer<List<DriversModel>>() {
             @Override
             public void onChanged(List<DriversModel> driversModels) {
                 adapter.setDrivers(driversModels);
@@ -63,7 +63,7 @@ public class driverComplete extends AppCompatActivity {
                 Toast.makeText(driverComplete.this, "Deleting " +
                         myWord.getName(), Toast.LENGTH_LONG).show();
 
-                mDriverViewModel.deleteWord(myWord);
+                mDriverViewModel.deleteDriver(myWord);
             }
         });
 
